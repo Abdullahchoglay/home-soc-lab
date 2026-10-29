@@ -34,7 +34,9 @@ log analysis, alert triage, and incident investigation.
 - [x] Collect the PowerShell Operational event channel with Wazuh
 - [x] Generate controlled PowerShell script-block event (4104)
 - [x] Verify AUTH-001 in the Wazuh manager
-- [ ] Verify PS-001 in the Wazuh manager
+- [x] Install and syntax-check custom Wazuh rule 100101 for PS-001
+- [x] Validate PS-001 rule logic with Wazuh `wazuh-logtest`
+- [ ] Confirm a live endpoint-forwarded Rule 100101 alert in Wazuh Discover
 - [ ] Install Sysmon after resolving host storage constraints
 
 ## Notes

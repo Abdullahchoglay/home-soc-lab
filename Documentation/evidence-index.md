@@ -12,14 +12,16 @@ redacted and the events are verified manager-side.
 | `04-fim-filter-context.png` | FIM dashboard filters and current time window | Published |
 | `05-fim-rule-details.png` | Rules 554, 550, and 553 with event types | Published |
 | `08-auth-001-wazuh-verification.png` | Event ID 4625 query with three matching Wazuh alerts, including the latest controlled test | Published |
+| `PS-001-rule-test.txt` | Sanitized Wazuh 4.14.7 rule-engine output showing rule 100101 and alert generation | Published |
 | `06-failed-logon-4625-clean.png` | Controlled Windows 4625 event | Local only; redact identifiers |
 | `07-powershell-4104-marked.png` | Controlled PowerShell 4104 marker | Local only; redact identifiers |
 
 ## Evidence boundaries
 
-FIM and failed-logon manager-side evidence is verified. The PowerShell image
-proves endpoint telemetry; manager-side verification remains pending until that
-event is confirmed in the Wazuh dashboard or manager alerts.
+FIM and failed-logon manager-side evidence is verified. PS-001 has separate
+proof of local Event 4104 generation and manager-side rule-engine validation.
+The remaining boundary is a live endpoint-forwarded Rule 100101 alert in Wazuh
+Discover; the repository does not claim that final hop is complete.
 
 ## Publication set
 

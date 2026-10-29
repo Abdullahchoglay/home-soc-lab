@@ -7,10 +7,11 @@ monitoring, alert validation, investigation, and technical documentation. A
 Wazuh all-in-one server runs on Ubuntu Server in VirtualBox and monitors a
 Windows 11 endpoint named `WIN-ENDPOINT-01`.
 
-The lab currently demonstrates a complete File Integrity Monitoring (FIM)
-investigation and endpoint-level validation of failed-logon and PowerShell
-telemetry. Results that have not yet been confirmed in the Wazuh manager are
-marked as pending rather than presented as completed detections.
+The lab demonstrates a complete File Integrity Monitoring (FIM) investigation,
+end-to-end failed-logon validation, and a tested custom PowerShell detection.
+PS-001 is verified at both the Windows event layer and in the Wazuh rule engine;
+its final live endpoint-to-manager alert remains explicitly recorded as an open
+validation item.
 
 ## Architecture
 
@@ -56,8 +57,10 @@ Wazuh Discover.
 
 PowerShell script-block and module logging were enabled. The PowerShell
 Operational channel was added to the Wazuh agent configuration, and a harmless
-marked command generated Event ID `4104`. Endpoint evidence is verified; Wazuh
-manager verification is pending.
+marked command generated Event ID `4104`. Custom Wazuh rule `100101` detects the
+lab marker at level 5 and maps it to MITRE ATT&CK T1059.001. Wazuh
+`wazuh-logtest` confirmed the rule produces an alert. The remaining validation
+item is a live Rule 100101 alert forwarded from the Windows endpoint.
 
 ## Repository Contents
 
@@ -66,6 +69,7 @@ Detections/       Detection objectives, data sources, and analyst guidance
 Documentation/    Architecture, build notes, reproduction, and troubleshooting
 Evidence/         Sanitized text evidence suitable for version control
 investigations/   Investigation reports and an analyst report template
+Rules/            Custom Wazuh detection rules used by the lab
 Screenshots/      Reviewed evidence; sensitive working images remain excluded
 ```
 
@@ -103,6 +107,7 @@ endpoint. The latest hit corresponds to the controlled test generated on
 
 - Wazuh installation and endpoint enrollment
 - Windows Security and PowerShell event-log analysis
+- Custom Wazuh rule development and `wazuh-logtest` validation
 - File Integrity Monitoring
 - Alert triage and true-positive classification
 - Hash and metadata interpretation
@@ -113,7 +118,8 @@ endpoint. The latest hit corresponds to the controlled test generated on
 
 ## Current Limitations
 
-- PS-001 still needs manager-side verification.
+- PS-001's custom rule is manager-side tested; live endpoint-to-manager Rule
+  100101 alerting still needs one final confirmation.
 - Sysmon is not installed.
 - A VM snapshot is deferred because the host has limited free disk space.
 - Screenshots containing Windows usernames or hostnames remain excluded.
@@ -121,17 +127,16 @@ endpoint. The latest hit corresponds to the controlled test generated on
 
 ## Next Improvements
 
-1. Verify PS-001 in the Wazuh dashboard or manager alerts.
+1. Confirm a live Rule 100101 hit from `WIN-ENDPOINT-01` in Wazuh Discover.
 2. Free additional host storage and create a known-good VM snapshot.
 3. Install Sysmon and collect its Operational event channel.
-4. Add a custom Wazuh rule and validate it with a harmless marker.
-5. Add sanitized Windows event screenshots when available.
+4. Add sanitized Windows event screenshots when available.
 
 ## Versions recorded
 
 - Windows endpoint: Windows 11 Home `10.0.26200.9168`
 - Wazuh Windows agent: `4.14.7`
-- Wazuh server: version not captured in the reviewed evidence
+- Wazuh server and rule engine: `4.14.7`
 - Ubuntu server: Ubuntu Server 24.04 LTS
 
 Exact versions should be captured again before rebuilding the lab because

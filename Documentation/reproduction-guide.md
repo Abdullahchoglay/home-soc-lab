@@ -68,7 +68,11 @@ may apply.
    collection.
 3. Back up and validate the agent configuration before restarting the service.
 4. Run a harmless uniquely marked command.
-5. Confirm Event ID 4104 locally and then verify manager-side ingestion.
+5. Add a custom rule in the recommended custom-rule ID range and run
+   `/var/ossec/bin/wazuh-analysisd -t` before restarting the manager.
+6. Validate a sanitized sample with `/var/ossec/bin/wazuh-logtest`.
+7. Confirm Event ID 4104 locally, then confirm the live custom-rule hit in
+   Wazuh Discover or the manager alert log.
 
 ## 7. Document and preserve
 
@@ -83,3 +87,4 @@ may apply.
 - [Wazuh agent enrollment requirements](https://documentation.wazuh.com/current/user-manual/agent/agent-enrollment/requirements.html)
 - [Wazuh File Integrity Monitoring proof of concept](https://documentation.wazuh.com/current/proof-of-concept-guide/poc-file-integrity-monitoring.html)
 - [Wazuh Windows event-channel collection](https://documentation.wazuh.com/current/user-manual/capabilities/log-data-collection/configuration.html)
+- [Wazuh custom rules](https://documentation.wazuh.com/current/user-manual/ruleset/rules/custom.html)

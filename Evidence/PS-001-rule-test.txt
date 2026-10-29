@@ -1,0 +1,25 @@
+SANITIZED EVIDENCE — PS-001 CUSTOM RULE TEST
+Date: 2026-10-29
+Wazuh logtest version: 4.14.7
+
+Input fields:
+- win.system.providerName: Microsoft-Windows-PowerShell
+- win.system.eventID: 4104
+- win.system.channel: Microsoft-Windows-PowerShell/Operational
+- win.system.computer: REDACTED-ENDPOINT
+- win.eventdata.scriptBlockText: Write-Output 'SOC-LAB-PS-001-ENDTOEND-RULETEST'
+
+Wazuh Phase 3 result:
+- Rule ID: 100101
+- Level: 5
+- Description: PS-001 lab marker detected.
+- Groups: windows, powershell
+- MITRE ID: T1059.001
+- MITRE tactic: Execution
+- MITRE technique: PowerShell
+- Result: Alert to be generated
+
+Validation boundary:
+This proves the installed manager rule decodes and matches the expected event.
+It does not by itself prove that the live Windows endpoint event traversed the
+agent-to-manager path and produced a Rule 100101 alert in the index.

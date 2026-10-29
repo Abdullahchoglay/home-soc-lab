@@ -51,10 +51,20 @@ reachable from the host for Wazuh enrollment. Localhost NAT forwarding for TCP
 
 ## VirtualBox Guest Control authentication
 
-Guest Control initially allowed direct verification of Wazuh alerts but later
-stopped accepting new Ubuntu sessions. The VM and Wazuh agent continued running.
-AUTH-001 and PS-001 were therefore documented as endpoint-verified but pending
-manager-side verification.
+Guest Control initially became unreliable while the VM and Wazuh agent kept
+running. After service recovery, AUTH-001 was verified in Wazuh Discover. For
+PS-001, the custom rule was installed, syntax-checked, and verified directly
+with `wazuh-logtest`; a live endpoint-forwarded Rule 100101 hit is still tracked
+as the remaining validation item.
 
 **Lesson:** record the exact validation boundary and never present an unverified
 result as complete.
+
+## Wazuh dashboard query input through VirtualBox
+
+Mouse input worked in the dashboard, but synthetic keyboard input was rejected
+by the VirtualBox console during the final PS-001 query. Manager logs were
+checked directly and the rule was tested with Wazuh's native rule-test utility.
+
+**Lesson:** use independent validation paths and retain text evidence when a UI
+capture path is unreliable.

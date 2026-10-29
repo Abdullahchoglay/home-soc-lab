@@ -1,0 +1,10 @@
+<group name="windows,powershell,">
+  <rule id="100101" level="5">
+    <field name="win.system.eventID">^4104$</field>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">SOC-LAB-PS-001-ENDTOEND</field>
+    <description>PS-001 lab marker detected.</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+</group>

@@ -1,14 +1,20 @@
 SANITIZED EVIDENCE — PS-001
-Date/time: 2026-09-17 16:34:42 UTC
+Initial endpoint event: 2026-09-17 16:34:42 UTC
+Rule validation: 2026-10-29
 Endpoint: WIN-ENDPOINT-01
 Provider: Microsoft-Windows-PowerShell
 Event ID: 4104
-Marker: SOC-LAB-PS-001
+Marker family: SOC-LAB-PS-001-ENDTOEND
 
 PowerShell script-block and module logging were enabled. The PowerShell
 Operational event channel was added to Wazuh agent collection and the agent
 service restarted successfully.
 
-Source: Local Windows PowerShell Operational event log
-Wazuh manager verification: Pending
+Sources:
+- Local Windows PowerShell Operational event log
+- Wazuh 4.14.7 wazuh-logtest output
+
+Custom rule: 100101, level 5, MITRE ATT&CK T1059.001
+Rule-engine result: Alert to be generated
+Live endpoint-to-manager Rule 100101 alert: Pending final confirmation
 Verdict: Authorized telemetry validation.
