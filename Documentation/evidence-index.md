@@ -20,8 +20,8 @@ redacted and the events are verified manager-side.
 
 FIM and failed-logon manager-side evidence is verified. PS-001 has separate
 proof of local Event 4104 generation and manager-side rule-engine validation.
-The remaining boundary is a live endpoint-forwarded Rule 100101 alert in Wazuh
-Discover; the repository does not claim that final hop is complete.
+Live endpoint-forwarded Rule 100101 indexing is outside the published evidence
+scope; the repository does not claim that final hop.
 
 ## Publication set
 

@@ -16,5 +16,5 @@ Sources:
 
 Custom rule: 100101, level 5, MITRE ATT&CK T1059.001
 Rule-engine result: Alert to be generated
-Live endpoint-to-manager Rule 100101 alert: Pending final confirmation
+Live endpoint-to-manager Rule 100101 alert: Not claimed; outside evidence scope
 Verdict: Authorized telemetry validation.

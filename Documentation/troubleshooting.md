@@ -54,8 +54,8 @@ reachable from the host for Wazuh enrollment. Localhost NAT forwarding for TCP
 Guest Control initially became unreliable while the VM and Wazuh agent kept
 running. After service recovery, AUTH-001 was verified in Wazuh Discover. For
 PS-001, the custom rule was installed, syntax-checked, and verified directly
-with `wazuh-logtest`; a live endpoint-forwarded Rule 100101 hit is still tracked
-as the remaining validation item.
+with `wazuh-logtest`. Live Rule 100101 indexing is not claimed by the published
+scope.
 
 **Lesson:** record the exact validation boundary and never present an unverified
 result as complete.

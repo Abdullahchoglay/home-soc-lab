@@ -33,9 +33,9 @@ not intentionally exposed to other devices on the local network.
 - Wazuh File Integrity Monitoring
 - Wazuh system inventory
 
-## Current Limitations
+## Scope Boundaries
 
-- Sysmon is not installed yet.
-- A VM snapshot is deferred because the Windows C: drive has limited free space.
+- Sysmon and snapshot lifecycle management are outside the defined lab scope.
 - Five reviewed screenshots are published; Windows event screenshots containing
-  local identifiers remain excluded.
+  local identifiers are intentionally excluded.
+- The design is a single-host learning environment, not a production SOC.

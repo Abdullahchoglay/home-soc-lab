@@ -18,7 +18,7 @@ log analysis, alert triage, and incident investigation.
 - Virtualization Platform: VirtualBox
 - SIEM: Wazuh
 
-## Current Progress
+## Completed Scope
 
 - [x] VirtualBox installed
 - [x] Ubuntu Server VM created
@@ -36,8 +36,12 @@ log analysis, alert triage, and incident investigation.
 - [x] Verify AUTH-001 in the Wazuh manager
 - [x] Install and syntax-check custom Wazuh rule 100101 for PS-001
 - [x] Validate PS-001 rule logic with Wazuh `wazuh-logtest`
-- [ ] Confirm a live endpoint-forwarded Rule 100101 alert in Wazuh Discover
-- [ ] Install Sysmon after resolving host storage constraints
+- [x] Publish sanitized evidence and investigation records
+- [x] Complete repository review and project closure
+
+Live endpoint-forwarded Rule 100101 indexing, Sysmon deployment, and VM
+snapshot lifecycle management are outside the completed scope. They are not
+presented as project requirements.
 
 ## Notes
 

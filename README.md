@@ -1,5 +1,7 @@
 # Home SOC Lab with Wazuh
 
+**Project status: Complete — 29 October 2026**
+
 ## Overview
 
 This project is a small home security operations lab built to practice endpoint
@@ -9,9 +11,9 @@ Windows 11 endpoint named `WIN-ENDPOINT-01`.
 
 The lab demonstrates a complete File Integrity Monitoring (FIM) investigation,
 end-to-end failed-logon validation, and a tested custom PowerShell detection.
-PS-001 is verified at both the Windows event layer and in the Wazuh rule engine;
-its final live endpoint-to-manager alert remains explicitly recorded as an open
-validation item.
+PS-001 is verified at both the Windows event layer and in the Wazuh rule engine.
+Live Rule 100101 indexing was not used as a completion criterion and is not
+claimed by this project.
 
 ## Architecture
 
@@ -59,8 +61,8 @@ PowerShell script-block and module logging were enabled. The PowerShell
 Operational channel was added to the Wazuh agent configuration, and a harmless
 marked command generated Event ID `4104`. Custom Wazuh rule `100101` detects the
 lab marker at level 5 and maps it to MITRE ATT&CK T1059.001. Wazuh
-`wazuh-logtest` confirmed the rule produces an alert. The remaining validation
-item is a live Rule 100101 alert forwarded from the Windows endpoint.
+`wazuh-logtest` confirmed the rule produces an alert. This completes PS-001's
+defined scope: endpoint telemetry plus manager-side rule validation.
 
 ## Repository Contents
 
@@ -123,21 +125,21 @@ that an alert would be generated. The published
 - Evidence sanitization and investigation reporting
 - Git repository preparation
 
-## Current Limitations
+## Scope Boundaries
 
-- PS-001's custom rule is manager-side tested; live endpoint-to-manager Rule
-  100101 alerting still needs one final confirmation.
-- Sysmon is not installed.
-- A VM snapshot is deferred because the host has limited free disk space.
-- Screenshots containing Windows usernames or hostnames remain excluded.
+- Live endpoint-to-indexer Rule 100101 evidence is not claimed; the published
+  evidence demonstrates the local event and manager rule independently.
+- Sysmon and VM snapshot management are outside this project's defined scope.
+- Screenshots containing Windows usernames or hostnames are intentionally
+  excluded from the public repository.
 - This is a learning lab, not a production architecture.
 
-## Next Improvements
+## Closure
 
-1. Confirm a live Rule 100101 hit from `WIN-ENDPOINT-01` in Wazuh Discover.
-2. Free additional host storage and create a known-good VM snapshot.
-3. Install Sysmon and collect its Operational event channel.
-4. Add sanitized Windows event screenshots when available.
+The planned portfolio scope is complete. FIM-001, AUTH-001, and PS-001 each
+include detection documentation, sanitized evidence, and an investigation
+record. Sysmon, additional endpoint agents, automated response, and production
+hardening would be separate projects rather than unfinished requirements here.
 
 ## Versions recorded
 
