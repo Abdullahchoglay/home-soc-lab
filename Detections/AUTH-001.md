@@ -20,9 +20,10 @@ Windows Security event log collected from `WIN-ENDPOINT-01`.
 
 ## Validation Status
 
-The endpoint event was regenerated and verified locally on 2026-09-17. Wazuh
-manager-side alert verification is pending because VirtualBox Guest Control
-stopped accepting new Ubuntu sessions during validation.
+The endpoint event was first verified locally on 2026-09-17. On 2026-10-29,
+failed-logon auditing was confirmed, a new controlled failure was generated,
+and Event ID 4625 was verified in the Wazuh `wazuh-alerts-*` index for
+`WIN-ENDPOINT-01`.
 
 ## Analyst Guidance
 

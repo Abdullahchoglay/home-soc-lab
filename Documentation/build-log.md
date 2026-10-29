@@ -33,7 +33,8 @@ log analysis, alert triage, and incident investigation.
 - [x] Enable PowerShell script-block and module logging
 - [x] Collect the PowerShell Operational event channel with Wazuh
 - [x] Generate controlled PowerShell script-block event (4104)
-- [ ] Verify AUTH-001 and PS-001 in the Wazuh manager
+- [x] Verify AUTH-001 in the Wazuh manager
+- [ ] Verify PS-001 in the Wazuh manager
 - [ ] Install Sysmon after resolving host storage constraints
 
 ## Notes

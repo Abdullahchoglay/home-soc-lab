@@ -7,6 +7,7 @@ Screenshots/**/*.png
 !Screenshots/03-fim-overview.png
 !Screenshots/04-fim-filter-context.png
 !Screenshots/05-fim-rule-details.png
+!Screenshots/08-auth-001-wazuh-verification.png
 
 # Working screenshots kept at the project root while they are being reviewed
 /*.png
@@ -18,6 +19,8 @@ Screenshots/**/*.png
 *.pem
 raw-evidence/
 Screenshots/archive/
+Evidence/*-diagnostic.txt
+Tools/
 
 # OS/editor files
 Thumbs.db

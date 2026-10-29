@@ -49,8 +49,8 @@ The activity was investigated and classified as a **benign true positive**.
 
 A single controlled Windows logon failure was generated using a nonexistent lab
 account. Windows recorded Event ID `4625`, logon type 2, with status
-`0xC000006D`. Endpoint evidence is verified; Wazuh manager verification is
-pending.
+`0xC000006D`. The event was regenerated on 2026-10-29 and verified end to end in
+Wazuh Discover.
 
 ### PS-001 — PowerShell script-block telemetry
 
@@ -91,6 +91,14 @@ successful authenticated API session.
 
 ![FIM rule details](Screenshots/05-fim-rule-details.png)
 
+### Failed-logon verification
+
+![Wazuh failed-logon results](Screenshots/08-auth-001-wazuh-verification.png)
+
+The `wazuh-alerts-*` index returned three Event ID 4625 hits for the monitored
+endpoint. The latest hit corresponds to the controlled test generated on
+2026-10-29.
+
 ## Skills Demonstrated
 
 - Wazuh installation and endpoint enrollment
@@ -105,7 +113,7 @@ successful authenticated API session.
 
 ## Current Limitations
 
-- AUTH-001 and PS-001 still need manager-side verification.
+- PS-001 still needs manager-side verification.
 - Sysmon is not installed.
 - A VM snapshot is deferred because the host has limited free disk space.
 - Screenshots containing Windows usernames or hostnames remain excluded.
@@ -113,7 +121,7 @@ successful authenticated API session.
 
 ## Next Improvements
 
-1. Verify AUTH-001 and PS-001 in the Wazuh dashboard or manager alerts.
+1. Verify PS-001 in the Wazuh dashboard or manager alerts.
 2. Free additional host storage and create a known-good VM snapshot.
 3. Install Sysmon and collect its Operational event channel.
 4. Add a custom Wazuh rule and validate it with a harmless marker.

@@ -1,5 +1,6 @@
 SANITIZED EVIDENCE — AUTH-001
-Date/time: 2026-09-17 16:21:20 UTC
+Original endpoint validation: 2026-09-17 16:21:20 UTC
+End-to-end revalidation: 2026-10-29 14:22:58 UTC
 Endpoint: WIN-ENDPOINT-01
 Provider: Microsoft-Windows-Security-Auditing
 Event ID: 4625
@@ -9,6 +10,6 @@ Failure: Unknown user name or bad password
 Status: 0xC000006D
 Sub-status: 0xC0000064
 
-Source: Local Windows Security event log
-Wazuh manager verification: Pending
-Verdict: Benign true positive at the endpoint event layer.
+Sources: Local Windows Security event log and Wazuh Discover (`wazuh-alerts-*`)
+Wazuh manager verification: Verified on 2026-10-29
+Verdict: Benign true positive; authorized end-to-end validation.

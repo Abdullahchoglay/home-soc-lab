@@ -7,13 +7,15 @@ the nonexistent account `SOC-LAB-INVALID`.
 
 ## Evidence
 
-- **Timestamp:** 2026-09-17 16:21:20 UTC
+- **Original timestamp:** 2026-09-17 16:21:20 UTC
+- **End-to-end revalidation:** 2026-10-29 14:22:58 UTC
 - **Provider:** Microsoft-Windows-Security-Auditing
 - **Event ID:** 4625
 - **Logon type:** 2 (interactive)
 - **Failure:** Unknown user name or bad password
 - **Status/sub-status:** `0xC000006D` / `0xC0000064`
 - **Logon result:** Failed as intended
+- **Wazuh result:** Event ID 4625 present in `wazuh-alerts-*`
 
 ## Analysis
 
@@ -24,8 +26,8 @@ but a single known lab event does not indicate compromise.
 
 ## Verdict
 
-**Benign true positive at the Windows event layer.** Wazuh manager-side alert
-verification remains pending.
+**Benign true positive.** The controlled event was verified locally and in the
+Wazuh alerts index.
 
 ## Response
 
