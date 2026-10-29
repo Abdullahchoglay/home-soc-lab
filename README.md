@@ -103,6 +103,13 @@ The `wazuh-alerts-*` index returned three Event ID 4625 hits for the monitored
 endpoint. The latest hit corresponds to the controlled test generated on
 2026-10-29.
 
+### PowerShell custom-rule verification
+
+The sanitized [PS-001 rule-test evidence](Evidence/PS-001-rule-test.txt) records
+Wazuh 4.14.7 decoding the test event, matching custom Rule 100101, and reporting
+that an alert would be generated. The published
+[custom rule](Rules/ps001_lab_rules.xml) is included for reproducibility.
+
 ## Skills Demonstrated
 
 - Wazuh installation and endpoint enrollment
