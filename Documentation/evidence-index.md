@@ -30,4 +30,3 @@ The active publication set is:
 
 Screenshots 06-07 and images in `Screenshots/archive/` are local working
 evidence and should not be published unless specifically reviewed and redacted.
-

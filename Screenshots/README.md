@@ -17,5 +17,3 @@ The active set is:
 Only screenshots 01-05 are tracked in the public repository. Screenshots 06-07
 and the historical images in `archive/` remain excluded by `.gitignore`. Use
 `Documentation/evidence-checklist.md` before publishing any additional image.
-
-
