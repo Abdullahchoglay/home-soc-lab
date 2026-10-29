@@ -14,7 +14,8 @@
 ```text
 WIN-ENDPOINT-01
     |
-    | Encrypted Wazuh agent traffic (TCP 1514/1515)
+    | Secure event transport (TCP 1514)
+    | Agent enrollment (TCP 1515)
     v
 VirtualBox localhost NAT forwarding
     |
@@ -36,4 +37,5 @@ not intentionally exposed to other devices on the local network.
 
 - Sysmon is not installed yet.
 - A VM snapshot is deferred because the Windows C: drive has limited free space.
-- Screenshots remain excluded from Git until reviewed and sanitized.
+- Five reviewed screenshots are published; Windows event screenshots containing
+  local identifiers remain excluded.

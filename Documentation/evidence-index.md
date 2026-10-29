@@ -6,7 +6,7 @@ redacted and the events are verified manager-side.
 
 | File | Purpose | Review status |
 |---|---|---|
-| `01-wazuh-services-and-api.png` | Manager, indexer, dashboard active; API responds | Published |
+| `01-wazuh-services-and-api.png` | Manager, indexer, and dashboard active; unauthenticated API request reaches the service and returns the expected HTTP 401 challenge | Published |
 | `02-active-agent.png` | `WIN-ENDPOINT-01` active in Wazuh | Published |
 | `03-fim-overview.png` | Current FIM added/modified/deleted overview | Published |
 | `04-fim-filter-context.png` | FIM dashboard filters and current time window | Published |

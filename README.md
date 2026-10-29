@@ -17,7 +17,8 @@ marked as pending rather than presented as completed detections.
 ```text
 Windows 11 host and monitored endpoint
             |
-            | Wazuh agent traffic over TCP 1514/1515
+            | Secure events over TCP 1514
+            | Enrollment over TCP 1515
             v
 VirtualBox localhost NAT forwarding
             |
@@ -74,6 +75,10 @@ Screenshots/      Reviewed evidence; sensitive working images remain excluded
 
 ![Wazuh services and API](Screenshots/01-wazuh-services-and-api.png)
 
+The API returned HTTP `401` to an unauthenticated request. This confirms that
+the service was reachable and enforcing authentication; it does not represent a
+successful authenticated API session.
+
 ### Active Windows endpoint
 
 ![Active Wazuh agent](Screenshots/02-active-agent.png)
@@ -108,11 +113,21 @@ Screenshots/      Reviewed evidence; sensitive working images remain excluded
 
 ## Next Improvements
 
-1. Restore administrative access to the Wazuh VM and verify AUTH-001/PS-001.
+1. Verify AUTH-001 and PS-001 in the Wazuh dashboard or manager alerts.
 2. Free additional host storage and create a known-good VM snapshot.
 3. Install Sysmon and collect its Operational event channel.
 4. Add a custom Wazuh rule and validate it with a harmless marker.
 5. Add sanitized Windows event screenshots when available.
+
+## Versions recorded
+
+- Windows endpoint: Windows 11 Home `10.0.26200.9168`
+- Wazuh Windows agent: `4.14.7`
+- Wazuh server: version not captured in the reviewed evidence
+- Ubuntu server: Ubuntu Server 24.04 LTS
+
+Exact versions should be captured again before rebuilding the lab because
+installation and configuration guidance can change between releases.
 
 ## Safety and Scope
 

@@ -76,3 +76,10 @@ may apply.
 2. Record limitations and pending validation honestly.
 3. Commit only reviewed files.
 4. Create a VM snapshot when adequate disk space is available.
+
+## Official references
+
+- [Wazuh architecture and default ports](https://documentation.wazuh.com/current/getting-started/architecture.html)
+- [Wazuh agent enrollment requirements](https://documentation.wazuh.com/current/user-manual/agent/agent-enrollment/requirements.html)
+- [Wazuh File Integrity Monitoring proof of concept](https://documentation.wazuh.com/current/proof-of-concept-guide/poc-file-integrity-monitoring.html)
+- [Wazuh Windows event-channel collection](https://documentation.wazuh.com/current/user-manual/capabilities/log-data-collection/configuration.html)

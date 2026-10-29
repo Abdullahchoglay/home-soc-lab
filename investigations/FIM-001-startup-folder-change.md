@@ -11,7 +11,7 @@ harmless validation of file integrity monitoring on `WIN-ENDPOINT-01`.
 - **Agent:** `WIN-ENDPOINT-01`
 - **Agent ID:** `001`
 - **Monitoring mode:** Real time
-- **File:** `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\wazuh-fim-lab-test.txt`
+- **File:** `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\wazuh-fim-current-test.txt`
 - **Test date:** 2026-09-17
 
 | Time (UTC) | Rule | Level | Event |
@@ -25,8 +25,9 @@ harmless validation of file integrity monitoring on `WIN-ENDPOINT-01`.
 The Startup directory is security-sensitive because files placed there can run
 when a user signs in. Wazuh detected each stage of the test in real time. The
 modification alert recorded changes to the file size, modification time, and
-MD5, SHA-1, and SHA-256 checksums. The deletion alert maps to MITRE ATT&CK
-techniques T1070.004 (File Deletion) and T1485 (Data Destruction).
+MD5, SHA-1, and SHA-256 checksums. In a real incident, unexpected deletion can
+be reviewed for possible T1070.004 (File Deletion) behavior, but this authorized
+test does not by itself establish malicious intent or an ATT&CK technique.
 
 The filename and timestamps match the authorized lab procedure. No executable
 payload was used, and the temporary file was removed after testing.

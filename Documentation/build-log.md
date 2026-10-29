@@ -53,6 +53,6 @@ confirmed that the agent was connected and active.
 
 ## Detection Test 01 — File Integrity Monitoring
 
-A harmless text file named `wazuh-fim-lab-test.txt` was created, modified, and
+A harmless text file named `wazuh-fim-current-test.txt` was created, modified, and
 deleted in the monitored Windows Startup directory. The expected Wazuh rule IDs
 are 554 (file added), 550 (file modified), and 553 (file deleted).
