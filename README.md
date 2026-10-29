@@ -119,5 +119,3 @@ Screenshots/      Reviewed evidence; sensitive working images remain excluded
 All testing was performed on systems owned by the project author. Tests used
 harmless local actions, nonexistent accounts, and non-executable text files. No
 external systems were targeted.
-
-

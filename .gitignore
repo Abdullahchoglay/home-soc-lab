@@ -1,0 +1,25 @@
+# Screenshots may contain usernames, hostnames, SIDs, or local addresses.
+# Add only reviewed/sanitized copies to a future Evidence folder.
+Screenshots/*.png
+Screenshots/**/*.png
+!Screenshots/01-wazuh-services-and-api.png
+!Screenshots/02-active-agent.png
+!Screenshots/03-fim-overview.png
+!Screenshots/04-fim-filter-context.png
+!Screenshots/05-fim-rule-details.png
+
+# Working screenshots kept at the project root while they are being reviewed
+/*.png
+
+# Local secrets, exports, logs, and backups
+*.bak
+*.log
+*.key
+*.pem
+raw-evidence/
+Screenshots/archive/
+
+# OS/editor files
+Thumbs.db
+.DS_Store
+

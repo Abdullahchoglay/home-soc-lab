@@ -1,0 +1,14 @@
+SANITIZED EVIDENCE — AUTH-001
+Date/time: 2026-09-17 16:21:20 UTC
+Endpoint: WIN-ENDPOINT-01
+Provider: Microsoft-Windows-Security-Auditing
+Event ID: 4625
+Logon type: 2 (interactive)
+Test account: SOC-LAB-INVALID
+Failure: Unknown user name or bad password
+Status: 0xC000006D
+Sub-status: 0xC0000064
+
+Source: Local Windows Security event log
+Wazuh manager verification: Pending
+Verdict: Benign true positive at the endpoint event layer.

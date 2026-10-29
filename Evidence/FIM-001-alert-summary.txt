@@ -1,0 +1,14 @@
+SANITIZED EVIDENCE — FIM-001
+Date: 2026-09-17
+Agent: WIN-ENDPOINT-01 (ID 001)
+Mode: realtime
+
+15:49:52 UTC | Rule 554 | Level 5 | File added to the system
+15:50:07 UTC | Rule 550 | Level 7 | Integrity checksum changed
+15:50:22 UTC | Rule 553 | Level 7 | File deleted
+
+Test artifact:
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\wazuh-fim-current-test.txt
+
+Source: Wazuh manager alerts.json
+Verdict: Benign true positive; authorized lab validation.
